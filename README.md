@@ -70,3 +70,31 @@ git branch: Lista todas as branches locais. O asterisco (*) indica em qual você
 git branch -a: Lista todas as branches (locais e as que existem no GitHub).
 
 git checkout <nome>: Alterna entre as ramificações existentes.
+
+9. O Arquivo .gitignore
+Aprendemos como dizer ao Git para ignorar arquivos ou pastas específicas que não devem ser versionados (como senhas, arquivos de configuração local ou pastas pesadas de bibliotecas).
+
+touch .gitignore: Cria o arquivo de configuração (deve estar na raiz do projeto).
+
+Funcionamento: Qualquer nome de arquivo ou padrão de pasta escrito dentro dele será ignorado pelo comando git status.
+
+Exemplos Comuns:
+
+node_modules/ (Pastas de dependências de projetos Node.js/React).
+
+.env (Arquivos com chaves secretas e senhas de banco de dados).
+
+*.log (Arquivos de log gerados pelo sistema).
+
+10. Ciclo de Vida do .gitignore
+Um ponto crucial que aprendemos é que o próprio arquivo .gitignore precisa ser rastreado pelo Git.
+
+Criar o .gitignore.
+
+Adicionar as regras de exclusão dentro dele.
+
+Executar git add .gitignore.
+
+Executar git commit -m "Configura regras de exclusão".
+
+Nota de Segurança: Se um arquivo já foi "comitado" uma vez, adicioná-lo ao .gitignore depois não fará o Git parar de rastreá-lo automaticamente. É preciso remover o arquivo do cache do Git primeiro.
