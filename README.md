@@ -98,3 +98,24 @@ Executar git add .gitignore.
 Executar git commit -m "Configura regras de exclusão".
 
 Nota de Segurança: Se um arquivo já foi "comitado" uma vez, adicioná-lo ao .gitignore depois não fará o Git parar de rastreá-lo automaticamente. É preciso remover o arquivo do cache do Git primeiro.
+
+11. Sincronização entre Ramificações (O Fluxo Profissional)
+Aprendemos que a maneira mais segura de atualizar a branch principal (main) com o que foi desenvolvido na branch de trabalho (desenvolvimento1) é realizar a mesclagem (merge) localmente.
+
+Por que mesclar localmente primeiro?
+Resolução de Conflitos: Se houver arquivos diferentes na main e na desenvolvimento1, o conflito aparecerá no seu computador. É muito mais fácil resolver no seu editor de texto do que tentar consertar direto no GitHub.
+
+Estabilidade: Você garante que a versão que está enviando para a main remota já foi testada e unificada no seu ambiente local.
+
+Rastreabilidade: O histórico de como as ramificações se uniram fica registrado de forma clara.
+
+Comandos para o Ciclo de Publicação:
+Supondo que você terminou as alterações na desenvolvimento1:
+
+a. Atualize sua branch de trabalho no remoto: git push origin desenvolvimento1
+
+b. Mude para a branch principal: git checkout main
+
+c. Puxe as alterações da branch de desenvolvimento para a main local: git merge desenvolvimento1
+
+d. Envie a branch principal atualizada para o GitHub: git push origin main
