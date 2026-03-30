@@ -45,3 +45,28 @@ git branch <nome>: Cria uma nova ramificação.
 git checkout <nome> (ou git switch): Alterna entre as ramificações.
 
 git branch: Lista todas as ramificações existentes.
+
+6. Sincronização de Conteúdo entre Branches
+Aprendemos como mover arquivos de uma ramificação para outra localmente antes de enviar para a nuvem.
+
+git merge master: Estando na branch main, este comando trouxe todo o conteúdo atualizado da master para a main.
+
+Fast-forward: Quando uma branch está puramente "atrás" da outra, o Git apenas move o ponteiro para frente, alinhando as duas histórias instantaneamente.
+
+7. Renomeando e Limpando o Repositório
+Para manter o projeto organizado e com nomes personalizados, realizamos a renomeação de branches tanto no ambiente local quanto no remoto (GitHub).
+
+git branch -m master desenvolvimento1: Renomeia a branch local de master para desenvolvimento1.
+
+git push origin desenvolvimento1: Cria a nova branch com o nome atualizado no GitHub.
+
+git push origin --delete master: Deleta a branch com o nome antigo no servidor remoto.
+
+git branch -d master: Deleta a branch antiga localmente (modo seguro).
+
+8. Comandos de Verificação e Navegação
+git branch: Lista todas as branches locais. O asterisco (*) indica em qual você está "pisando".
+
+git branch -a: Lista todas as branches (locais e as que existem no GitHub).
+
+git checkout <nome>: Alterna entre as ramificações existentes.
